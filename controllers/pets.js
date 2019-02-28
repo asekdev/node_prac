@@ -11,7 +11,11 @@ router.get("/fave/:input", (req, res) => {
   res.send("Your fave pet is " + req.params.input)
 })
 
-router.get("/:name", (req, res) => {
+router.get("/sample", (req, res) => {
+  res.status(200).send("Hello world");
+})
+
+router.get("/mine/:name", (req, res) => {
   const found = db.find(pet => {
     return pet.name === req.params.name;
   })
