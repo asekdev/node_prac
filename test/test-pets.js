@@ -4,13 +4,8 @@ var chai = require('chai')
 chai.use(chaiHttp);
 
 it('should return hello world', done => {
-    const result =  {
-      id: 2,
-      name: "Birdy",
-      type: "Bird"
-    }
 
-    chai.request('http://localhost:3000/api')
+  chai.request('http://localhost:3000/api')
     .get('/pets/sample')
     .end((err, res) => {
 
