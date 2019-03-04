@@ -7,10 +7,9 @@ before-install:
 
 install: 
   - npm install
-  - node index.js
 
 script:
   - node index.js
 
 after-script: 
-- npm test
+  - npm test
