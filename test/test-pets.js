@@ -1,39 +1,49 @@
 var chai = require('chai')
   , chaiHttp = require('chai-http');
+var expect = chai.expect;
 
 chai.use(chaiHttp);
 
-it('should return hello world', done => {
+it('basic test equality var', done => {
+  let x = 10;
+  let y = 10;
+  let result = x + y;
 
-  chai.request('http://localhost:3000/api')
-    .get('/pets/sample')
-    .end((err, res) => {
-
-      console.log(res.body)
-        if (err) done(err);
-        chai.expect(res.status).to.equal(200);
-        chai.expect(res.text).to.equal("Hello world");
-        done();
-    });
+  expect(result).to.equal(20);
+  done(); 
 });
 
-it('should return a json body', done => {
-  const result = {
-    id: 2,
-    name: "Birdy",
-    type: "Bird"
-  }
+// it('should return hello world', done => {
 
-  chai.request('http://localhost:3000/api')
-  .get('/pets/mine/Birdy')
-  .end((err, res) => {
+//   chai.request('http://localhost:3000/api')
+//     .get('/pets/sample')
+//     .end((err, res) => {
 
-    console.log("res body = ", res.body)
+//       console.log(res.body)
+//         if (err) done(err);
+//         chai.expect(res.status).to.equal(200);
+//         chai.expect(res.text).to.equal("Hello world");
+//         done();
+//     });
+// });
 
-      if (err) done(err);
+// it('should return a json body', done => {
+//   const result = {
+//     id: 2,
+//     name: "Birdy",
+//     type: "Bird"
+//   }
 
-      //deep equal compares the object properties
-      chai.expect(res.body).to.deep.equal(result);
-      done();
-  });
-});
+//   chai.request('http://localhost:3000/api')
+//   .get('/pets/mine/Birdy')
+//   .end((err, res) => {
+
+//     console.log("res body = ", res.body)
+
+//       if (err) done(err);
+
+//       //deep equal compares the object properties
+//       chai.expect(res.body).to.deep.equal(result);
+//       done();
+//   });
+// });

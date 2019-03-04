@@ -1,44 +1,53 @@
 var chai = require('chai')
   , chaiHttp = require('chai-http');
+var expect = chai.expect;
 
 chai.use(chaiHttp);
 
-it('test from second test file', done => {
-    const result =  {
-      id: 2,
-      name: "Birdy",
-      type: "Bird"
-    }
-
-    chai.request('http://localhost:3000/api')
-    .get('/pets/sample')
-    .end((err, res) => {
-
-      console.log(res.body)
-        if (err) done(err);
-        chai.expect(res.status).to.equal(200);
-        chai.expect(res.text).to.equal("Hello world");
-        done();
-    });
+it('basic test equality', done => {
+  expect(2).to.equal(2);
+  done(); 
 });
 
-it('should return a json body', done => {
-  const result = {
-    id: 2,
-    name: "Birdy",
-    type: "Bird"
-  }
 
-  chai.request('http://localhost:3000/api')
-  .get('/pets/mine/Birdy')
-  .end((err, res) => {
+// it('test from second test file', done => {
+//     const result =  {
+//       id: 2,
+//       name: "Birdy",
+//       type: "Bird"
+//     }
 
-    console.log("res body = ", res.body)
+//     chai.request('http://localhost:3000/api')
+//     .get('/pets/sample')
+//     .end((err, res) => {
 
-      if (err) done(err);
+//       console.log(res.body)
+//         if (err) done(err);
+//         chai.expect(res.status).to.equal(200);
+//         chai.expect(res.text).to.equal("Hello world");
+//         done();
+//     });
+// });
 
-      //deep equal compares the object properties
-      chai.expect(res.body).to.deep.equal(result);
-      done();
-  });
-});
+// it('should return a json body', done => {
+//   const result = {
+//     id: 2,
+//     name: "Birdy",
+//     type: "Bird"
+//   }
+
+//   chai.request('http://localhost:3000/api')
+//   .get('/pets/mine/Birdy')
+//   .end((err, res) => {
+
+//     console.log("res body = ", res.body)
+
+//       if (err) done(err);
+
+//       //deep equal compares the object properties
+//       chai.expect(res.body).to.deep.equal(result);
+//       done();
+//   });
+// });
+
+// expect(2).to.equal(2); 
