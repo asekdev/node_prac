@@ -4,8 +4,7 @@ const db = require("../db/db");
 
 router.get("/fave/:input", (req, res) => {
   if(req.params.input === "dog") {
-    res.status(400)
-    res.send("Cant access the pet you provided.")
+    res.status(400).send("Cant access the pet you provided.")
     return;
   }
   res.send("Your fave pet is " + req.params.input)
