@@ -3,7 +3,7 @@ var chai = require('chai')
 
 chai.use(chaiHttp);
 
-it('should return hello world', done => {
+it('test from second test file', done => {
     const result =  {
       id: 2,
       name: "Birdy",
