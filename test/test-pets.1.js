@@ -10,24 +10,24 @@ it('basic test equality', done => {
 });
 
 
-// it('test from second test file', done => {
-//     const result =  {
-//       id: 2,
-//       name: "Birdy",
-//       type: "Bird"
-//     }
+it('test from second test file', done => {
+    const result =  {
+      id: 2,
+      name: "Birdy",
+      type: "Bird"
+    }
 
-//     chai.request('http://localhost:3000/api')
-//     .get('/pets/sample')
-//     .end((err, res) => {
+    chai.request('http://localhost:3000/api')
+    .get('/pets/sample')
+    .end((err, res) => {
 
-//       console.log(res.body)
-//         if (err) done(err);
-//         chai.expect(res.status).to.equal(200);
-//         chai.expect(res.text).to.equal("Hello world");
-//         done();
-//     });
-// });
+      console.log(res.body)
+        if (err) done(err);
+        chai.expect(res.status).to.equal(200);
+        chai.expect(res.text).to.equal("Hello world");
+        done();
+    });
+});
 
 // it('should return a json body', done => {
 //   const result = {
