@@ -27,23 +27,23 @@ it('basic test equality var', done => {
 //     });
 // });
 
-it('should return a json body', done => {
-  const result = {
-    id: 2,
-    name: "Birdy",
-    type: "Bird"
-  }
+// it('should return a json body', done => {
+//   const result = {
+//     id: 2,
+//     name: "Birdy",
+//     type: "Bird"
+//   }
 
-  chai.request('http://localhost:3000/api')
-  .get('/pets/mine/Birdy')
-  .end((err, res) => {
+//   chai.request('http://localhost:3000/api')
+//   .get('/pets/mine/Birdy')
+//   .end((err, res) => {
 
-    console.log("res body = ", res.body)
+//     console.log("res body = ", res.body)
 
-      if (err) done(err);
+//       if (err) done(err);
 
-      //deep equal compares the object properties
-      chai.expect(res.body).to.deep.equal(result);
-      done();
-  });
-});
+//       //deep equal compares the object properties
+//       chai.expect(res.body).to.deep.equal(result);
+//       done();
+//   });
+// });
