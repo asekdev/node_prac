@@ -4,7 +4,10 @@ const pets = require("./controllers/index");
 
 app.use("/api", pets);
 
+app.get("/", (req, res) => {
+  res.send("Hello from asek Node.js app!")
+})
+
 app.listen(3000, () => {
   console.log("Listening on port 3000...")
 })
-
