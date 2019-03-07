@@ -9,5 +9,8 @@ before-install:
 install: 
   - npm install
 
+before-script:
+  - cd src/
+  
 script:
   - npm test
