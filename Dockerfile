@@ -1,9 +1,15 @@
+#base image
 FROM node:8
-#change directory location
-WORKDIR /usr/src/app
-COPY package*.json ./
+
+# copy src (local) into container src folder 
+COPY src/ /src
+
+# our workdir is where we will be using our RUN command
+WORKDIR /src
+
 RUN npm install
-#fix copy command
-COPY . .
-EXPOSE 9191
+
+# exposing a particular port for the application
+EXPOSE 9696
+
 CMD ["node", "index.js"]
