@@ -4,6 +4,7 @@ node_js:
 
 before-install:
   - echo "in the before install..."
+  - cd src/
 
 install: 
   - npm install
