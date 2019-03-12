@@ -9,7 +9,7 @@ it('test from second test file', done => {
     chai.request(constants.API_PATH)
     .get("/jokes/randomzz")
     .end((err, res) => {
-      console.log(res)
+      // console.log(res)
       chai.expect(res.status).to.equal(404);
       done();
     });
