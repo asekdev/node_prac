@@ -9,11 +9,14 @@ app.get("/", (req, res) => {
   res.send("Hello from asek Node.js app!")
 })
 
-app.get("/joke", (req, res) => {
-  const quote = api.getQuote();
-
-  quote.then(data => { res.send(data); })
- 
+app.get("/joke", async (req, res) => {
+ try {
+  const quote = await api.getQuote();
+  res.send(quote)
+ }
+ catch(err) {
+  res.status(400).send({error: err.message})
+ }
 })
 
 app.listen(9696, () => {
