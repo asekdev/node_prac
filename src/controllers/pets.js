@@ -31,4 +31,8 @@ router.get("/mine/:name", (req, res) => {
   res.send(found);
 })
 
+router.get("/all", (req, res) => {
+  res.send(db);
+})
+
 module.exports = router;
