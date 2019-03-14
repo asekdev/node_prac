@@ -13,20 +13,6 @@ it('basic test equality var', done => {
   done(); 
 });
 
-// it('should return hello world', done => {
-
-//   chai.request('http://localhost:3000/api')
-//     .get('/pets/sample')
-//     .end((err, res) => {
-
-//       console.log(res.body)
-//         if (err) done(err);
-//         chai.expect(res.status).to.equal(200);
-//         chai.expect(res.text).to.equal("Hello world");
-//         done();
-//     });
-// });
-
 // it('should return a json body', done => {
 //   const result = {
 //     id: 2,
