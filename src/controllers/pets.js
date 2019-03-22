@@ -11,7 +11,7 @@ router.get("/fave/:input", (req, res) => {
 })
 
 router.get("/sample", (req, res) => {
-  res.status(200).send("Hello world");
+  res.status(200).send("Hello world from Pets sample");
 })
 
 router.get("/mine/:name", (req, res) => {
